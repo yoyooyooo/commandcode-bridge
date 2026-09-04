@@ -1,0 +1,4 @@
+data: {"type":"text-delta","id":"txt-0","text":"Hi"}
+
+data: {"type":"finish","finishReason":"stop","totalUsage":{"inputTokens":1,"outputTokens":1,"totalTokens":2}}
+

@@ -1,0 +1,5 @@
+{"type":"start"}
+{"type":"tool-input-start","id":"call_1","toolName":"lookup"}
+{"type":"tool-input-delta","id":"call_1","delta":"{\"q\":\"x\"}"}
+{"type":"tool-input-end","id":"call_1"}
+{"type":"finish-step","finishReason":"tool-calls","usage":{"inputTokens":7,"outputTokens":3,"totalTokens":10}}

@@ -1,0 +1,4 @@
+{"type":"text-delta","id":"txt-0","text":"A"}
+{"type":"finish-step","finishReason":"stop","usage":{"outputTokens":1}}
+{"type":"text-delta","id":"txt-0","text":"B"}
+{"type":"finish","finishReason":"stop","totalUsage":{"outputTokens":2}}

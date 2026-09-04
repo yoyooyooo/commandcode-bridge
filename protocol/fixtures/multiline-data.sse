@@ -1,0 +1,5 @@
+data: {"type":"text-delta","id":"txt-0","text":
+data: "Hi"}
+
+data: {"type":"finish","finishReason":"stop"}
+

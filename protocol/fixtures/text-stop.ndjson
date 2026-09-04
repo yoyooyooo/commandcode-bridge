@@ -1,0 +1,6 @@
+{"type":"start"}
+{"type":"text-start","id":"txt-0"}
+{"type":"text-delta","id":"txt-0","text":"PONG"}
+{"type":"text-end","id":"txt-0"}
+{"type":"finish-step","finishReason":"stop","usage":{"inputTokens":7,"outputTokens":3,"totalTokens":10,"cachedInputTokens":2}}
+{"type":"finish","finishReason":"stop","totalUsage":{"inputTokens":7,"outputTokens":3,"totalTokens":10,"cachedInputTokens":2}}

@@ -1,0 +1,8 @@
+{"type":"start"}
+{"type":"reasoning-start","id":"reasoning-0"}
+{"type":"reasoning-delta","id":"reasoning-0","text":"think"}
+{"type":"reasoning-end","id":"reasoning-0"}
+{"type":"text-start","id":"txt-0"}
+{"type":"text-delta","id":"txt-0","text":"PONG"}
+{"type":"text-end","id":"txt-0"}
+{"type":"finish","finishReason":"stop","totalUsage":{"inputTokens":4,"outputTokens":2,"totalTokens":6}}
