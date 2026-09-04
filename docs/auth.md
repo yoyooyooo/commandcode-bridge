@@ -26,6 +26,5 @@ key. Raw secrets must not be committed.
 
 ## Sub2API
 
-A Sub2API `openai/apikey` account should store a Proxy Client Key and point at
-the Proxy base URL. It must not store the Command Code upstream key once the
-canary path is accepted.
+A Sub2API `openai/apikey` account stores a Proxy Client Key and points at the
+Proxy base URL. It must not store the Command Code upstream key.

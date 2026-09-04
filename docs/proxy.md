@@ -45,5 +45,4 @@ provider.
 - Empty live model lists are fetch failures. Fallback is last-known-good, then
   the versioned static catalog. `/readyz` is `degraded` on fallback.
 
-Canary listen address on mini is `127.0.0.1:8788`. The previous
-`127.0.0.1:8787` service must stay up until cutover is explicitly approved.
+Mini currently listens on `127.0.0.1:8788`. The previous `8787` service is unloaded.
