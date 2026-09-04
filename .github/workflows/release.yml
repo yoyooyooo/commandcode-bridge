@@ -1,0 +1,47 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+
+      - name: Test
+        run: |
+          go test -race ./...
+          go vet ./...
+
+      - name: Build binaries
+        env:
+          VERSION: ${{ github.ref_name }}
+          COMMIT: ${{ github.sha }}
+        run: bash scripts/build-release.sh
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -eu
+          notes="$(git log --pretty=format:'- %s' "$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo HEAD)"..HEAD | head -n 50 || true)"
+          if [ -z "$notes" ]; then
+            notes="commandcode-bridge ${GITHUB_REF_NAME}"
+          fi
+          gh release create "$GITHUB_REF_NAME" \
+            --title "commandcode-bridge ${GITHUB_REF_NAME}" \
+            --notes "$notes" \
+            dist/commandcode-bridge_"${GITHUB_REF_NAME}"_* \
+            dist/SHA256SUMS

@@ -13,10 +13,9 @@ Sub2API.
 
 ## Status
 
-- New Proxy canary target: `127.0.0.1:8788`
-- Existing mini service on `127.0.0.1:8787` is not replaced by this repo
-- GitHub visibility: private
-- Public release: not authorized
+- GitHub visibility: private; public npm/GitHub publish is not authorized
+- Proxy binaries are distributed as private GitHub Releases from version tags
+- See `docs/release.md`
 
 ## Proxy
 

@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"errors"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -10,12 +11,18 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/yoyooyooo/commandcode-bridge/internal/buildinfo"
 	"github.com/yoyooyooo/commandcode-bridge/internal/catalog"
 	"github.com/yoyooyooo/commandcode-bridge/internal/openai"
 	"github.com/yoyooyooo/commandcode-bridge/internal/runtime"
 )
 
 func main() {
+	if len(os.Args) > 1 && (os.Args[1] == "version" || os.Args[1] == "--version" || os.Args[1] == "-version") {
+		fmt.Println(buildinfo.String())
+		return
+	}
+
 	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
 	defer stop()
 
@@ -44,7 +51,7 @@ func main() {
 		}
 	}()
 
-	log.Printf("commandcode-bridge listening on %s", cfg.ListenAddr)
+	log.Printf("commandcode-bridge %s listening on %s", buildinfo.Version, cfg.ListenAddr)
 	if err := server.ListenAndServe(); err != nil && !errors.Is(err, http.ErrServerClosed) {
 		log.Fatal(err)
 	}

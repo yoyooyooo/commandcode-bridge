@@ -15,4 +15,10 @@ jobs:
           go-version: "1.22"
       - run: go test -race ./...
       - run: go vet ./...
-      - run: CGO_ENABLED=0 go build -o /tmp/commandcode-bridge ./cmd/commandcode-bridge
+      - name: Build
+        env:
+          VERSION: ci
+          COMMIT: ${{ github.sha }}
+          TARGETS: linux/amd64
+          OUTDIR: /tmp/ccb-dist
+        run: bash scripts/build-release.sh
