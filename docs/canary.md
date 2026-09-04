@@ -14,13 +14,13 @@ GitHub        private Release v0.1.0
 Sub2API:
 
 ```text
-account 1117 commandcode-go  priority 20  groups [31, 32]
+account 1117 commandcode-go  priority 1  groups [31, 32]
 base     http://host.docker.internal:8788/v1
 auth     Proxy Client Key named sub2api-commandcode
 ```
 
 Account 1118 / group 35 remain inactive leftovers from canary and must not be
-rescheduled. Group 32 still has iMile (1) then Command Code (20) then Freebuff (50).
+rescheduled. Group 32 order is Command Code (1), iMile (10), Freebuff (50).
 
 Pi Direct Adapter path on mini:
 
