@@ -37,6 +37,9 @@ Verified 2026-09-04 on mini:
 - host `/healthz` and Sub2API container `/healthz` on 8788: 200
 - group key `/v1/models`: 401 without key, 401 wrong key, 200 with key 46; four canary models only
 - non-stream and stream `/v1/chat/completions` `deepseek-v4-flash`: 200; stream and buffered both returned `PONG` when `max_completion_tokens>=64`
+- Proxy 8788 tool loop: turn 1 `finish_reason=tool_calls` `lookup {"q":"ping"}`; turn 2 with tool result returned `pong`
+- Sub2API group 35 tool loop: same two-turn result via model `deepseek-v4-flash`; usage rows `431811`/`431812` are `account_id=1118`, `api_key_id=46`, `group_id=35`
+- Pi Direct Adapter smoke: `pi -e adapters/pi --no-tools --model commandcode/deepseek/deepseek-v4-flash` printed `PONG` (does not use the Proxy)
 - Sub2API usage rows `431468`/`431469`/`431470`: `account_id=1118`, `api_key_id=46`, `group_id=35`, `upstream_endpoint=/v1/chat/completions`
 - `/v1/responses` inbound was converted to `/v1/chat/completions` by Sub2API
 - account 1117 still `group_ids=[31,32]`, base `http://host.docker.internal:8787/v1`, priority 20
