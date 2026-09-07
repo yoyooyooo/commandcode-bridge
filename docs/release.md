@@ -1,7 +1,7 @@
 # Release
 
-The Proxy ships as a versioned binary. GitHub Releases are private because the
-repository is private. Do not make the repository public.
+The Proxy ships as a versioned binary. Pushing a matching tag publishes a
+GitHub Release with cross-compiled assets.
 
 ## Tag
 
@@ -28,12 +28,16 @@ VERSION=v0.1.0 bash scripts/build-release.sh
 The binary reports version via `commandcode-bridge version`. Build metadata is
 injected with `-ldflags` into `internal/buildinfo`.
 
-## Install on mini
+## Install
 
-Download the `darwin_arm64` asset from the private Release, then:
+Download the asset that matches your OS and architecture from the GitHub
+Release, then install it onto your PATH:
 
 ```bash
-install -m 755 commandcode-bridge_<version>_darwin_arm64 ~/.local/bin/commandcode-bridge
+install -m 755 commandcode-bridge_<version>_linux_amd64 ~/.local/bin/commandcode-bridge
 ```
 
-Secrets stay in `~/.config/commandcode-bridge/` and are not part of the Release.
+Use `darwin_arm64` or `darwin_amd64` on macOS, and `linux_arm64` on ARM Linux.
+
+Secrets belong in a path you control (for example
+`~/.config/commandcode-bridge/`) and are not part of the Release.

@@ -1,6 +1,6 @@
 # Command Code Bridge
 
-Private repository. Do not publish.
+OpenAI-compatible proxy for [Command Code](https://commandcode.ai), plus an optional Pi coding-agent adapter.
 
 ```text
 Command Code Bridge
@@ -13,8 +13,7 @@ Sub2API.
 
 ## Status
 
-- GitHub visibility: private; public npm/GitHub publish is not authorized
-- Proxy binaries are distributed as private GitHub Releases from version tags
+- Proxy binaries are published as GitHub Releases from version tags
 - See `docs/release.md`
 
 ## Proxy
@@ -43,7 +42,7 @@ See `docs/proxy.md`, `docs/auth.md`, and `protocol/README.md`.
 
 ## Pi Direct Adapter
 
-`adapters/pi` is a MIT-licensed local fork of
+`adapters/pi` is a MIT-licensed fork of
 `safzanpirani/pi-commandcode-provider` at
 `c41f3b2ee2fe226658da886dd36ba3f22cff0a43`. It keeps
 `providers.commandcode.apiKey` in Pi's global `models.json` and does not

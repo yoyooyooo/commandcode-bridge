@@ -4,7 +4,7 @@ This package lives in `commandcode-bridge/adapters/pi`. It is a Direct Adapter:
 Pi can call Command Code without starting the Proxy. Using the Proxy from Pi
 does not require this package.
 
-> Local maintenance fork of [`safzanpirani/pi-commandcode-provider`](https://github.com/safzanpirani/pi-commandcode-provider), based on commit `c41f3b2ee2fe226658da886dd36ba3f22cff0a43`. The local fork leaves API-key ownership to Pi's global provider configuration and carries a regression test for that boundary.
+> Maintenance fork of [`safzanpirani/pi-commandcode-provider`](https://github.com/safzanpirani/pi-commandcode-provider), based on commit `c41f3b2ee2fe226658da886dd36ba3f22cff0a43`. This adapter leaves API-key ownership to Pi's global provider configuration and carries a regression test for that boundary.
 
 A [pi](https://github.com/earendil-works/pi-mono) extension that adds [Command Code](https://commandcode.ai) as a model provider — DeepSeek V4 Pro/Flash, Kimi K3, GLM 5.2, MiniMax M3, Qwen 3.7 Max, Inkling, and the rest of the open-weight roster, all routable from inside pi.
 
@@ -38,14 +38,16 @@ falling back.
 
 ## Install
 
+From this directory:
+
 ```bash
-pi install /Users/yoyo/Documents/code/personal/commandcode-bridge/adapters/pi
+pi install .
 ```
 
-Or try the local fork for one run without installing:
+Or try the adapter for one run without installing:
 
 ```bash
-pi -e /Users/yoyo/Documents/code/personal/commandcode-bridge/adapters/pi
+pi -e .
 ```
 
 ## Use
@@ -122,12 +124,13 @@ Reverse-engineered reference for the undocumented endpoint this extension speaks
 
 ## Development
 
+From this directory:
+
 ```bash
-cd /Users/yoyo/Documents/code/personal/commandcode-bridge/adapters/pi
 npm test
 
 # Live smoke against the global models.json credential
-pi -e /Users/yoyo/Documents/code/personal/commandcode-bridge/adapters/pi \
+pi -e . \
   --no-tools --model commandcode/zai-org/GLM-5.2-Fast -p "say pong"
 ```
 
