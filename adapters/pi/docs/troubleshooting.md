@@ -16,7 +16,7 @@ The key didn't resolve. Causes, in order of likelihood:
 - `~/.pi/agent/models.json` has no `providers.commandcode.apiKey` entry.
 - The key was rotated but the global entry still contains the old value.
 - `src/index.ts` declares its own `apiKey`, which takes precedence over the
-  `models.json` value. This local fork intentionally omits that field.
+  `models.json` value. This adapter intentionally omits that field.
 - The key is invalid. Confirm with a minimal Pi request after updating the
   global entry.
 

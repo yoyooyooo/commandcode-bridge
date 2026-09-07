@@ -8,7 +8,7 @@
  * itself uses (GET /provider/v1/models is readable for the roster).
  *
  * Authenticates with the API key resolved by Pi for the `commandcode`
- * provider, normally from ~/.pi/agent/models.json in this local fork.
+ * provider, normally from ~/.pi/agent/models.json.
  *
  * Wire shape, sender:
  *   POST /alpha/generate

@@ -12,16 +12,16 @@ Code `/alpha/generate` behavior and OpenAI Chat Completions projection.
 
 ## Pi Direct Adapter
 
-`adapters/pi` is a locally maintained fork of:
+`adapters/pi` is a maintained fork of:
 
 - Project: https://github.com/safzanpirani/pi-commandcode-provider
 - Upstream commit: `c41f3b2ee2fe226658da886dd36ba3f22cff0a43`
 - License: MIT
 - Copyright (c) 2026 Safzan Pirani
 
-The upstream MIT license text is preserved at `adapters/pi/LICENSE`. Local
-changes keep API-key ownership in Pi's global `providers.commandcode.apiKey`
-configuration and add a regression test for that boundary.
+The upstream MIT license text is preserved at `adapters/pi/LICENSE`. This
+fork keeps API-key ownership in Pi's global `providers.commandcode.apiKey`
+configuration and adds a regression test for that boundary.
 
 ## Claim limits
 

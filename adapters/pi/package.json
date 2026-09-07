@@ -1,6 +1,6 @@
 {
   "name": "@yoyo/pi-commandcode-provider",
-  "version": "0.1.0-local.3",
+  "version": "0.1.0",
   "description": "Pi Direct Adapter for Command Code. Credential ownership stays in Pi global models.json.",
   "private": true,
   "type": "module",

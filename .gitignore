@@ -15,4 +15,3 @@ node_modules/
 *.test
 *.out
 /commandcode-bridge
-/commandcode-bridge-canary
